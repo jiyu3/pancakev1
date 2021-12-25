@@ -33,9 +33,10 @@ export type TokenAddressMap = Readonly<{ [chainId in ChainId]: Readonly<{ [token
 /**
  * An empty result, useful as a default.
  */
-const EMPTY_LIST: TokenAddressMap = {
+const EMPTY_LIST: any = {
   [ChainId.MAINNET]: {},
-  [ChainId.BSCTESTNET]: {}
+  // [ChainId.BSCTESTNET]: {}
+  81: {}
 }
 
 const listCache: WeakMap<TokenList, TokenAddressMap> | null =
@@ -55,7 +56,6 @@ export function listToTokenMap(list: TokenList): TokenAddressMap {
           })
           ?.filter((x): x is TagInfo => Boolean(x)) ?? []
       const token = new WrappedTokenInfo(tokenInfo, tags)
-      tokenMap[81] = {}
       if (tokenMap[token.chainId][token.address] !== undefined) throw Error('Duplicate tokens.')
       return {
         ...tokenMap,
