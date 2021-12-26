@@ -52,7 +52,7 @@ export default function Updater(): null {
             if (receipt) {
               dispatch(
                 finalizeTransaction({
-                  chainId,
+                  chainId: chainId as any,
                   hash,
                   receipt: {
                     blockHash: receipt.blockHash,
@@ -78,7 +78,7 @@ export default function Updater(): null {
                 hash
               )
             } else {
-              dispatch(checkedTransaction({ chainId, hash, blockNumber: lastBlockNumber }))
+              dispatch(checkedTransaction({ chainId: chainId as any, hash, blockNumber: lastBlockNumber }))
             }
           })
           .catch((error) => {

@@ -1,4 +1,4 @@
-import { ChainId, Pair, Token } from '@pancakeswap-libs/sdk'
+import { Pair, Token } from '@pancakeswap-libs/sdk'
 import flatMap from 'lodash.flatmap'
 import { useCallback, useMemo } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
@@ -22,6 +22,7 @@ import {
   unmuteAudio,
 } from './actions'
 import { setThemeCache } from '../../utils/theme'
+import ChainId from '../../constants/chainIds'
 
 function serializeToken(token: Token): SerializedToken {
   return {

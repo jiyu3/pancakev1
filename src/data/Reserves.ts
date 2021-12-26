@@ -22,8 +22,8 @@ export function usePairs(currencies: [Currency | undefined, Currency | undefined
   const tokens = useMemo(
     () =>
       currencies.map(([currencyA, currencyB]) => [
-        wrappedCurrency(currencyA, chainId),
-        wrappedCurrency(currencyB, chainId)
+        wrappedCurrency(currencyA, chainId as any),
+        wrappedCurrency(currencyB, chainId as any)
       ]),
     [chainId, currencies]
   )

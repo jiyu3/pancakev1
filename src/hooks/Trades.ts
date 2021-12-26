@@ -24,7 +24,7 @@ function useAllCommonPairs(currencyA?: Currency, currencyB?: Currency): Pair[] {
   )
 
   const [tokenA, tokenB] = chainId
-    ? [wrappedCurrency(currencyA, chainId), wrappedCurrency(currencyB, chainId)]
+    ? [wrappedCurrency(currencyA, chainId as any), wrappedCurrency(currencyB, chainId as any)]
     : [undefined, undefined]
 
   const allPairCombinations: [Token, Token][] = useMemo(

@@ -1,4 +1,6 @@
-import { ChainId, JSBI, Percent, Token, WETH } from '@pancakeswap-libs/sdk'
+import { JSBI, Percent, Token } from '@pancakeswap-libs/sdk'
+import WETH from './weth'
+import ChainId from './chainIds'
 
 export const ROUTER_ADDRESS = '0x5D35912930e56EBA65b891a6EeBc7007B75a096a'
 
@@ -7,21 +9,21 @@ type ChainTokenList = {
   readonly [chainId in ChainId]: Token[]
 }
 
-export const CAKE = new Token(ChainId.MAINNET, '0x39Cf42f297885565BFc1a1f99DeDcb5e8D79c6C0', 18, 'CAKE', 'PancakeSwap Token')
-export const WBNB = new Token(ChainId.MAINNET, '0x986b97C9aDa6E49F4fE5f581D78590cb012C9c8C', 18, 'WBNB', 'Wrapped BNB')
-export const DAI = new Token(ChainId.MAINNET, '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3', 18, 'DAI', 'Dai Stablecoin')
-export const BUSD = new Token(ChainId.BSCTESTNET, '0xbeA0552A62Ff4A1716aF885Dd1A3Bc15C71ae301', 18, 'TNM', 'Tanuma Token')
-export const BTCB = new Token(ChainId.BSCTESTNET, '0x5FA712069F62c62eA73a7F8e2A4bdec11c2BfeF7', 18, 'RCH', 'Raichi Token')
-export const USDT = new Token(ChainId.MAINNET, '0x8c7d475166711e24A04D822671C0356aF55981ec', 18, 'USDT', 'Tether USD')
+export const CAKE = new Token(ChainId.MAINNET as any, '0x39Cf42f297885565BFc1a1f99DeDcb5e8D79c6C0', 18, 'CAKE', 'PancakeSwap Token')
+export const WBNB = new Token(ChainId.MAINNET as any, '0x986b97C9aDa6E49F4fE5f581D78590cb012C9c8C', 18, 'WBNB', 'Wrapped BNB')
+export const DAI = new Token(ChainId.MAINNET as any, '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3', 18, 'DAI', 'Dai Stablecoin')
+export const BUSD = new Token(ChainId.TESTNET as any, '0xbeA0552A62Ff4A1716aF885Dd1A3Bc15C71ae301', 18, 'TNM', 'Tanuma Token')
+export const BTCB = new Token(ChainId.TESTNET as any, '0x5FA712069F62c62eA73a7F8e2A4bdec11c2BfeF7', 18, 'RCH', 'Raichi Token')
+export const USDT = new Token(ChainId.MAINNET as any, '0x8c7d475166711e24A04D822671C0356aF55981ec', 18, 'USDT', 'Tether USD')
 export const UST = new Token(
-  ChainId.MAINNET,
+  ChainId.MAINNET as any,
   '0x16d2A940E9706AF4eb14FDdCca402f196B7D0e92',
   18,
   'UST',
   'Wrapped UST Token'
 )
 export const ETH = new Token(
-  ChainId.MAINNET,
+  ChainId.MAINNET as any,
   '0x488c6A241A7Ddb7aBa32BDd29BC8C3A186873066',
   18,
   'ETH',
@@ -30,7 +32,7 @@ export const ETH = new Token(
 
 const WETH_ONLY: ChainTokenList = {
   [ChainId.MAINNET]: [WETH[ChainId.MAINNET]],
-  [ChainId.BSCTESTNET]: [WETH[ChainId.BSCTESTNET]],
+  [ChainId.TESTNET]: [WETH[ChainId.TESTNET]],
 }
 
 // used to construct intermediary pairs for trading

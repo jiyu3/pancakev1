@@ -77,8 +77,8 @@ export function useDerivedMintInfo(
     }
     if (independentAmount) {
       // we wrap the currencies just to get the price in terms of the other token
-      const wrappedIndependentAmount = wrappedCurrencyAmount(independentAmount, chainId)
-      const [tokenA, tokenB] = [wrappedCurrency(currencyA, chainId), wrappedCurrency(currencyB, chainId)]
+      const wrappedIndependentAmount = wrappedCurrencyAmount(independentAmount, chainId as any)
+      const [tokenA, tokenB] = [wrappedCurrency(currencyA, chainId as any), wrappedCurrency(currencyB, chainId as any)]
       if (tokenA && tokenB && wrappedIndependentAmount && pair) {
         const dependentCurrency = dependentField === Field.CURRENCY_B ? currencyB : currencyA
         const dependentTokenAmount =
@@ -105,7 +105,7 @@ export function useDerivedMintInfo(
       }
       return undefined
     }
-    const wrappedCurrencyA = wrappedCurrency(currencyA, chainId)
+    const wrappedCurrencyA = wrappedCurrency(currencyA, chainId as any)
     return pair && wrappedCurrencyA ? pair.priceOf(wrappedCurrencyA) : undefined
   }, [chainId, currencyA, noLiquidity, pair, parsedAmounts])
 
@@ -113,8 +113,8 @@ export function useDerivedMintInfo(
   const liquidityMinted = useMemo(() => {
     const { [Field.CURRENCY_A]: currencyAAmount, [Field.CURRENCY_B]: currencyBAmount } = parsedAmounts
     const [tokenAmountA, tokenAmountB] = [
-      wrappedCurrencyAmount(currencyAAmount, chainId),
-      wrappedCurrencyAmount(currencyBAmount, chainId),
+      wrappedCurrencyAmount(currencyAAmount, chainId as any),
+      wrappedCurrencyAmount(currencyBAmount, chainId as any),
     ]
     if (pair && totalSupply && tokenAmountA && tokenAmountB) {
       return pair.getLiquidityMinted(totalSupply, tokenAmountA, tokenAmountB)
