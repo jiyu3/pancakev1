@@ -13,50 +13,26 @@
     {
       "name": "WBNB Token",
       "symbol": "WBNB",
-      "address": "0x986b97C9aDa6E49F4fE5f581D78590cb012C9c8C",
-      "chainId": 81,
+      "address": "0xaeaaf0e2c81af264101b9129c00f4440ccf0f720",
+      "chainId": 336,
       "decimals": 18,
       "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c.png"
     },
     {
-      "name": "Bakery Token",
-      "symbol": "BAKE",
-      "address": "0x4527317Db1b0A3C8A358d0a2a687442Bd935f3aC",
-      "chainId": 81,
-      "decimals": 18,
-      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xe02df9e3e622debdd69fb838bb799e3f168902c5.png"
-    },
-    {
       "name": "Tanuma Token",
       "symbol": "TNM",
-      "address": "0xbeA0552A62Ff4A1716aF885Dd1A3Bc15C71ae301",
-      "chainId": 81,
+      "address": "0xae1989Ce71bCACD02AE1a5569ECD296E7D74a21C",
+      "chainId": 336,
       "decimals": 18,
       "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xe9e7cea3dedca5984780bafc599bd69add087d56.png"
     },
     {
-      "name": "Ethereum Token",
-      "symbol": "ETH",
-      "address": "0x488c6A241A7Ddb7aBa32BDd29BC8C3A186873066",
-      "chainId": 81,
-      "decimals": 18,
-      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x2170ed0880ac9a755fd29b2688956bd959f933f8.png"
-    },
-    {
       "name": "Raichi Token",
       "symbol": "RCH",
-      "address": "0x5FA712069F62c62eA73a7F8e2A4bdec11c2BfeF7",
-      "chainId": 81,
+      "address": "0xE17D2c5c7761092f31c9Eca49db426D5f2699BF0",
+      "chainId": 336,
       "decimals": 18,
       "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c.png"
-    },
-    {
-      "name": "Tether USD",
-      "symbol": "USDT",
-      "address": "0x8c7d475166711e24A04D822671C0356aF55981ec",
-      "chainId": 81,
-      "decimals": 18,
-      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x55d398326f99059ff775485246999027b3197955.png"
     },
     {
       "name": "XRP Token",

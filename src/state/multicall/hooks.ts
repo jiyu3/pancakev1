@@ -204,6 +204,7 @@ export function useMultipleContractSingleData(
         : undefined,
     [callInputs, contractInterface, fragment]
   )
+  console.info("fragment", fragment, "address", addresses, "callInputs", )
 
   const calls = useMemo(
     () =>
