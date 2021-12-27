@@ -1,4 +1,4 @@
-import { Token } from '@pancakeswap-libs/sdk'
+import { Token } from '@pancakeswap/sdk'
 import ChainId from './chainIds'
 
 const WETH = {

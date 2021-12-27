@@ -38,6 +38,7 @@ async function fetchChunk(
     )
   } catch (error) {
     console.info('Failed to fetch chunk inside retry', error)
+    // jiyu console.info("multicallContract", multicallContract)
     throw error
   }
   if (resultsBlockNumber.toNumber() < minBlockNumber) {

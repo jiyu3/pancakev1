@@ -204,7 +204,7 @@ export function useMultipleContractSingleData(
         : undefined,
     [callInputs, contractInterface, fragment]
   )
-  console.info("fragment", fragment, "address", addresses, "callInputs", )
+  // jiyu console.info("fragment", fragment, "address", addresses, "callInputs", callInputs, "callData", callData)
 
   const calls = useMemo(
     () =>

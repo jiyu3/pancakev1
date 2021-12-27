@@ -1,4 +1,4 @@
-import { Currency, currencyEquals, ETHER } from '@pancakeswap-libs/sdk'
+import { Currency, currencyEquals, ETHER } from '@pancakeswap/sdk'
 import { useMemo } from 'react'
 import WETH from '../constants/weth'
 import { tryParseAmount } from '../state/swap/hooks'

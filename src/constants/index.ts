@@ -1,4 +1,4 @@
-import { JSBI, Percent, Token } from '@pancakeswap-libs/sdk'
+import { JSBI, Percent, Token } from '@pancakeswap/sdk'
 import WETH from './weth'
 import ChainId from './chainIds'
 

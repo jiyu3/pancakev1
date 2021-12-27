@@ -80,7 +80,6 @@ export default function AddressInputPanel({
   onChange: (value: string) => void
 }) {
   const { chainId } = useActiveWeb3React()
-  console.info("chainId", chainId)
   const TranslateString = useI18n()
   const { address, loading, name } = useENS(value)
 
