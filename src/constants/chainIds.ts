@@ -1,5 +1,5 @@
 enum ChainId {
-    MAINNET = 56,
+    MAINNET = 336,
     TESTNET = 336
 }
 
