@@ -21,7 +21,7 @@ export const network = new NetworkConnector({
 
 let networkLibrary: Web3Provider | undefined
 export function getNetworkLibrary(): Web3Provider {
-  // eslint-disable-next-line no-return-assign
+  
   return (networkLibrary = networkLibrary ?? new Web3Provider(network.provider as any))
 }
 

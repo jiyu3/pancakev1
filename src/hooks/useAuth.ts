@@ -42,7 +42,7 @@ const useAuth = () => {
     } else {
       toastError("Can't find connector", 'The connector config is wrong')
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, [])
 
   return { login, logout: deactivate }
