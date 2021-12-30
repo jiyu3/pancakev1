@@ -31,7 +31,6 @@ export const HoverCard = styled(Card)`
 
 interface PositionCardProps {
   pair: Pair
-  // eslint-disable-next-line react/no-unused-prop-types
   showUnwrapped?: boolean
 }
 
