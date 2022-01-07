@@ -33,6 +33,8 @@ export const styleVariants = {
   },
   [variants.TERTIARY]: {
     backgroundColor: "tertiary",
+    border: "1px solid",
+    borderColor: "primary",
     boxShadow: "none",
     color: "primary",
   },
