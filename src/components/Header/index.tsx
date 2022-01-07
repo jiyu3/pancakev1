@@ -13,6 +13,8 @@ import UserBlock from "./UserBlock";
 import styled from "styled-components";
 import {MENU_HEIGHT } from './types'
 import { Link, useLocation } from 'react-router-dom'
+import {MouseoverTooltip as Tooltip} from '../Tooltip'
+
 
 const Wrapper = styled.div`
   position: relative;
@@ -46,6 +48,7 @@ const Inner = styled.div`
   transition: margin-top 0.2s;
   transform: translate3d(0, 0, 0);
   max-width: 100%;
+  margin-top: 48px;
 `;
 
 const Logo = styled.div`
@@ -78,7 +81,7 @@ const NavItem = styled(Link)<{isActive: boolean}>`
 `;
 
 const DisabledNavItem = styled(Link)`
-  color: #DBEAFE;
+  color: #C6D3E1;
   font-size: 16px;
   font-weight: 400;
 `;
@@ -99,10 +102,18 @@ const UikitMenu: React.FC<NavProps> = ({
           <NavItem isActive={location.pathname === '/swap'} to="/swap">Swap</NavItem>
           <NavItem isActive={location.pathname === '/pool'} to="/pool">Pool</NavItem>
           <NavItem isActive={location.pathname === '/farm'} to="/">Farm</NavItem>
-          <DisabledNavItem to="/">Stake</DisabledNavItem>
-          <DisabledNavItem to="/">Lend</DisabledNavItem>
-          <DisabledNavItem to="/" >NFT</DisabledNavItem>
-          <DisabledNavItem to="/">Refferal</DisabledNavItem>
+          <Tooltip text="Available in Feb">
+            <DisabledNavItem to="/">Stake</DisabledNavItem>
+          </Tooltip>
+          <Tooltip text="Available in Feb">
+            <DisabledNavItem to="/">Lend</DisabledNavItem>
+          </Tooltip>
+          <Tooltip text="Available in Feb">
+            <DisabledNavItem to="/" >NFT</DisabledNavItem>
+          </Tooltip>
+          <Tooltip text="Available in Feb">
+            <DisabledNavItem to="/">Refferal</DisabledNavItem>
+          </Tooltip>
         </NavList>
         <Flex>
           <UserBlock account={account} login={login} logout={logout} />
