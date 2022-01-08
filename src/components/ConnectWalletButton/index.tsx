@@ -1,5 +1,6 @@
 import React from 'react'
-import { Button, ButtonProps, useWalletModal} from '@pancakeswap-libs/uikit'
+import { ButtonProps, useWalletModal} from '@pancakeswap-libs/uikit'
+import { Button } from '../Button';
 import useI18n from 'hooks/useI18n'
 import useAuth from 'hooks/useAuth'
 

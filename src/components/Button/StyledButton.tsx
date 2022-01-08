@@ -13,6 +13,7 @@ const getDisabledStyles = ({ isLoading, theme }: ThemedButtonProps) => {
       &:disabled,
       &.pancake-button--disabled {
         cursor: not-allowed;
+        opacity: 0.6;
       }
     `;
   }
@@ -25,6 +26,7 @@ const getDisabledStyles = ({ isLoading, theme }: ThemedButtonProps) => {
       box-shadow: none;
       color:#fff;
       cursor: not-allowed;
+      opacity: 0.6;
     }
   `;
 };

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { JSBI, Pair, Percent } from '@pancakeswap/sdk'
-import { Button, Card as UIKitCard, CardBody, Text } from '@pancakeswap-libs/uikit'
+import { Card as UIKitCard, CardBody, Text } from '@pancakeswap-libs/uikit'
+import { Button } from '../Button';
 import { darken } from 'polished'
 import { ChevronDown, ChevronUp } from 'react-feather'
 import { Link } from 'react-router-dom'
