@@ -7,6 +7,11 @@ const blue = {
   blue100: '#DBEAFE',
 }
 
+const blueGray = {
+  blueGray900: '#0A1627',
+  blueGray500: '#7C99B9',
+}
+
 export const baseColors = {
   failure: "#ED4B9E",
   primary: "#1B6DC1",
@@ -28,12 +33,12 @@ export const lightColors: Colors = {
   backgroundDisabled: blue.blue500,
   contrast: "#191326",
   invertedContrast: "#FFFFFF",
-  input: "#eeeaf4",
+  input: "#F5F8FB",
   inputSecondary: "#d7caec",
   tertiary: "#EFF4F5",
-  text: "#452A7A",
+  text: blueGray.blueGray900,
   textDisabled: "#BDC2C4",
-  textSubtle: "#8f80ba",
+  textSubtle: blueGray.blueGray500,
   borderColor: "#E9EAEB",
   card: "#FFFFFF",
   dropdown: "#FFFFFF",
@@ -66,3 +71,4 @@ export const darkColors: Colors = {
 };
 
 
+// F5F8FB
