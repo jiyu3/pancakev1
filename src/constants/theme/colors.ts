@@ -1,12 +1,19 @@
 import { Colors } from "./types";
 
+const blue = {
+  blue900: '#11396F',
+  blue700: '#165398',
+  blue500: '#1B6DC1',
+  blue100: '#DBEAFE',
+}
+
 export const baseColors = {
   failure: "#ED4B9E",
   primary: "#1B6DC1",
   primaryBright: "#53DEE9",
-  primaryDark: "#0098A1",
+  primaryDark: "#11396F",
   secondary: "#7645D9",
-  success: "#31D0AA",
+  success: blue.blue700,
   warning: "#FFB237",
 };
 
@@ -18,7 +25,7 @@ export const lightColors: Colors = {
   ...baseColors,
   ...brandColors,
   background: "#FAF9FA",
-  backgroundDisabled: "#E9EAEB",
+  backgroundDisabled: blue.blue500,
   contrast: "#191326",
   invertedContrast: "#FFFFFF",
   input: "#eeeaf4",

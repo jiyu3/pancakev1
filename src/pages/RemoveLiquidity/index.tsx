@@ -4,7 +4,8 @@ import { splitSignature } from '@ethersproject/bytes'
 import { Contract } from '@ethersproject/contracts'
 import { TransactionResponse } from '@ethersproject/providers'
 import { Currency, currencyEquals, ETHER, Percent } from '@pancakeswap/sdk'
-import { Button, Flex, Text } from '@pancakeswap-libs/uikit'
+import { Flex, Text } from '@pancakeswap-libs/uikit'
+import { Button } from '../../components/Button';
 import { ArrowDown, Plus } from 'react-feather'
 import { RouteComponentProps } from 'react-router'
 
