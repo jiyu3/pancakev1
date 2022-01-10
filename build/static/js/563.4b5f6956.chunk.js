@@ -1,0 +1,1 @@
+(self.webpackChunk_pancakeswap_interface=self.webpackChunk_pancakeswap_interface||[]).push([[563],{36563:function(){}}]);

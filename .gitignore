@@ -9,8 +9,8 @@ sftp-config.json
 # testing
 /coverage
 
-# production
-/build
+# for static web app deployment
+# /build
 
 # misc
 .DS_Store
