@@ -11,18 +11,34 @@
   "keywords": ["pancake", "default"],
   "tokens": [
     {
-      "name": "WBNB Token",
-      "symbol": "WBNB",
-      "address": "0xaeaaf0e2c81af264101b9129c00f4440ccf0f720",
+      "name": "WSDN Token",
+      "symbol": "WSDN",
+      "address": "0x0f933Dc137D21cA519ae4C7E93f87a4C8EF365Ef",
       "chainId": 336,
       "decimals": 18,
       "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c.png"
     },
     {
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "address": "0xfa9343c3897324496a05fc75abed6bac29f8a40f",
+      "chainId": 336,
+      "decimals": 6,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xe9e7cea3dedca5984780bafc599bd69add087d56.png"
+    },
+    {
+      "name": "Tether",
+      "symbol": "USDT",
+      "address": "0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b",
+      "chainId": 336,
+      "decimals": 6,
+      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c.png"
+    },
+    {
       "name": "Tanuma Token",
       "symbol": "TNM",
       "address": "0x938BCe03532A3845Ec0aB75069E3d84f9cd2826f",
-      "chainId": 336,
+      "chainId": 99999,
       "decimals": 18,
       "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xe9e7cea3dedca5984780bafc599bd69add087d56.png"
     },
@@ -30,7 +46,7 @@
       "name": "Raichi Token",
       "symbol": "RCH",
       "address": "0x116dc328f6962C5defE32D17Ef8B118d56B77E88",
-      "chainId": 336,
+      "chainId": 999999,
       "decimals": 18,
       "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c.png"
     },
