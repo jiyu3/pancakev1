@@ -104,15 +104,9 @@ const UikitMenu: React.FC<NavProps> = ({
           <Tooltip text="Available in Feb">
             <DisabledNavItem to="/">Stake</DisabledNavItem>
           </Tooltip>
-          <Tooltip text="Available in Feb">
             <DisabledNavItem to="/">Lend</DisabledNavItem>
-          </Tooltip>
-          <Tooltip text="Available in Feb">
             <DisabledNavItem to="/" >NFT</DisabledNavItem>
-          </Tooltip>
-          <Tooltip text="Available in Feb">
             <DisabledNavItem to="/">Refferal</DisabledNavItem>
-          </Tooltip>
         </NavList>
         <Flex>
           <UserBlock account={account} login={login} logout={logout} />
