@@ -2,7 +2,7 @@ import React, { memo, useCallback, useMemo, useRef, useState } from 'react'
 import { ArrowLeft } from 'react-feather'
 import { usePopper } from 'react-popper'
 import { useDispatch, useSelector } from 'react-redux'
-import { Button, Text, ChevronDownIcon, CloseIcon } from '@pancakeswap-libs/uikit'
+import { Text, ChevronDownIcon, CloseIcon } from '@pancakeswap-libs/uikit'
 import styled from 'styled-components'
 import useI18n from 'hooks/useI18n'
 import { useFetchListCallback } from '../../hooks/useFetchListCallback'
@@ -20,6 +20,7 @@ import ListLogo from '../ListLogo'
 import QuestionHelper from '../QuestionHelper'
 import Row, { RowBetween } from '../Row'
 import { PaddedColumn, SearchInput, Separator, SeparatorDark } from './styleds'
+import { Button } from '../Button';
 
 const UnpaddedLinkStyledButton = styled(LinkStyledButton)`
   padding: 0;

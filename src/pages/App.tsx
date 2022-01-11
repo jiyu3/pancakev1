@@ -16,8 +16,7 @@ import { RedirectPathToSwapOnly } from './Swap/redirects'
 import { EN, allLanguages } from '../constants/localisation/languageCodes'
 import { LanguageContext } from '../hooks/LanguageContext'
 import { TranslationsContext } from '../hooks/TranslationsContext'
-
-import Menu from '../components/Menu'
+import Header from '../components/Header'
 import useGetDocumentTitlePrice from '../hooks/useGetDocumentTitlePrice'
 
 const AppWrapper = styled.div`
@@ -38,21 +37,13 @@ const BodyWrapper = styled.div`
   overflow-x: hidden;
   z-index: 1;
   justify-content: center;
-  background-image: url('/images/group-pancake.svg');
-  background-repeat: no-repeat;
-  background-position: bottom 24px center;
-  background-size: 90%;
+  background-color: #F5F8FB;
 
   ${({ theme }) => theme.mediaQueries.xs} {
     background-size: auto;
   }
 
   ${({ theme }) => theme.mediaQueries.lg} {
-    background-image: url('/images/arch-${({ theme }) => (theme.isDark ? 'dark' : 'light')}.svg'),
-      url('/images/left-pancake.svg'), url('/images/right-pancake.svg');
-    background-repeat: no-repeat;
-    background-position: center 420px, 10% 230px, 90% 230px;
-    background-size: contain, 266px, 266px;
     min-height: 90vh;
   }
 `
@@ -93,6 +84,7 @@ export default function App() {
     }
   }, [])
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const fetchTranslationsForSelectedLanguage = async () => {
     stringTranslationsApi
       .listLanguageTranslations(projectId, selectedLanguage.code, undefined, fileId, 200)
@@ -132,7 +124,7 @@ export default function App() {
             value={{ selectedLanguage, setSelectedLanguage: handleLanguageSelect, translatedLanguage, setTranslatedLanguage }}
           >
             <TranslationsContext.Provider value={{ translations, setTranslations }}>
-              <Menu>
+              <Header>
                 <BodyWrapper>
                   <Popups />
                   <Web3ReactManager>
@@ -153,7 +145,7 @@ export default function App() {
                   </Web3ReactManager>
                   <Marginer />
                 </BodyWrapper>
-              </Menu>
+              </Header>
             </TranslationsContext.Provider>
           </LanguageContext.Provider>
         </AppWrapper>
