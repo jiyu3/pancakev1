@@ -4,12 +4,12 @@ import ChainId from './chainIds'
 const WETH = {
   [ChainId.MAINNET]: new Token(
     ChainId.MAINNET as any,
-    '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', // should be replaced jiyu
+    '0x0f933Dc137D21cA519ae4C7E93f87a4C8EF365Ef',
     18,
   ),
   [ChainId.TESTNET]: new Token(
     ChainId.TESTNET as any,
-    '0xaE8E19eFB41e7b96815649A6a60785e1fbA84C1e', // should be replaced jiyu
+    '0x0f933Dc137D21cA519ae4C7E93f87a4C8EF365Ef',
     18,
   )
 }

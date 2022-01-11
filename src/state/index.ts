@@ -23,6 +23,7 @@ type MergedState = {
 }
 const PERSISTED_KEYS: string[] = ['user', 'transactions']
 const loadedState = load({ states: PERSISTED_KEYS }) as MergedState
+const savedState = save({ states: PERSISTED_KEYS }) as any
 if (loadedState.user) {
   loadedState.user.userDarkMode = getThemeCache()
 }
@@ -39,7 +40,7 @@ const store = configureStore({
     lists,
     toasts
   },
-  middleware: [...getDefaultMiddleware({ thunk: false }), save({ states: PERSISTED_KEYS })],
+  middleware: [...getDefaultMiddleware({ thunk: false }), savedState],
   preloadedState: loadedState,
 })
 
