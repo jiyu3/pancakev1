@@ -179,8 +179,7 @@ export function useSingleContractMultipleData(
         : [],
     [callInputs, contract, fragment]
   )
-  console.info("useSingleContractMultipleData", "fragment", fragment, "contract", contract)
-
+  
   const results = useCallsData(calls, options)
 
   const latestBlockNumber = useBlockNumber()
@@ -205,7 +204,6 @@ export function useMultipleContractSingleData(
         : undefined,
     [callInputs, contractInterface, fragment]
   )
-  console.info("fragment", fragment, "address", addresses, "callInputs", callInputs, "callData", callData)
 
   const calls = useMemo(
     () =>
@@ -249,7 +247,6 @@ export function useSingleCallResult(
         ]
       : []
   }, [contract, fragment, inputs])
-  console.info("useSingleCallResult", "fragment", fragment, "contract", contract, "inputs", inputs)
 
   const result = useCallsData(calls, options)[0]
   const latestBlockNumber = useBlockNumber()
