@@ -3,7 +3,6 @@ import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
 import { Currency, currencyEquals, ETHER, TokenAmount } from '@pancakeswap/sdk'
 import { CardBody, AddIcon, Text as UIKitText } from '@pancakeswap-libs/uikit'
-import {Button} from '../../components/Button';
 import { RouteComponentProps } from 'react-router-dom'
 import { LightCard } from 'components/Card'
 import { AutoColumn, ColumnCenter } from 'components/Column'
@@ -36,6 +35,7 @@ import { Dots, Wrapper } from '../Pool/styleds'
 import { ConfirmAddModalBottom } from './ConfirmAddModalBottom'
 import { PoolPriceBar } from './PoolPriceBar'
 import { ROUTER_ADDRESS } from '../../constants'
+import {Button} from '../../components/Button';
 
 export default function AddLiquidity({
   match: {

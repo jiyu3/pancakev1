@@ -1,7 +1,6 @@
 import React, { useCallback, useMemo } from 'react'
 import { diffTokenLists, TokenList } from '@uniswap/token-lists'
 import { Text } from '@pancakeswap-libs/uikit'
-import { Button } from '../Button';
 import { useDispatch } from 'react-redux'
 import { AppDispatch } from '../../state'
 import { useRemovePopup } from '../../state/application/hooks'
@@ -9,6 +8,7 @@ import { acceptListUpdate } from '../../state/lists/actions'
 import listVersionLabel from '../../utils/listVersionLabel'
 import { AutoColumn } from '../Column'
 import { AutoRow } from '../Row'
+import { Button } from '../Button';
 
 export default function ListUpdatePopup({
   popKey,

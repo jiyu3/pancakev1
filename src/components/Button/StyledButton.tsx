@@ -7,7 +7,7 @@ interface ThemedButtonProps extends BaseButtonProps {
   theme: DefaultTheme;
 }
 
-const getDisabledStyles = ({ isLoading, theme }: ThemedButtonProps) => {
+const getDisabledStyles = ({ isLoading }: ThemedButtonProps) => {
   if (isLoading === true) {
     return `
       &:disabled,

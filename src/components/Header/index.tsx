@@ -6,15 +6,14 @@ import useTheme from 'hooks/useTheme'
 import useGetPriceData from 'hooks/useGetPriceData'
 import useGetLocalProfile from 'hooks/useGetLocalProfile'
 import useAuth from 'hooks/useAuth'
-import links from './config'
-import { CAKE } from '../../constants'
 import { Flex, NavProps } from '@pancakeswap-libs/uikit'
-import UserBlock from "./UserBlock";
 import styled from "styled-components";
-import {MENU_HEIGHT } from './types'
 import { Link, useLocation } from 'react-router-dom'
 import {MouseoverTooltip as Tooltip} from '../Tooltip'
-
+import links from './config'
+import { CAKE } from '../../constants'
+import UserBlock from "./UserBlock";
+import { MENU_HEIGHT } from './types'
 
 const Wrapper = styled.div`
   position: relative;
@@ -93,7 +92,7 @@ const UikitMenu: React.FC<NavProps> = ({
   children,
 }) => {
   const location = useLocation()
-  console.log(location.pathname)
+
   return (
     <Wrapper>
       <StyledNav >

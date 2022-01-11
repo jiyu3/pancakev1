@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import { Currency, Pair } from '@pancakeswap/sdk'
 import { ChevronDownIcon, Text } from '@pancakeswap-libs/uikit'
-import { Button } from '../../components/Button';
 import styled from 'styled-components'
 import { darken } from 'polished'
 import useI18n from 'hooks/useI18n'
@@ -12,6 +11,7 @@ import DoubleCurrencyLogo from '../DoubleLogo'
 import { RowBetween } from '../Row'
 import { Input as NumericalInput } from '../NumericalInput'
 import { useActiveWeb3React } from '../../hooks'
+import { Button } from '../Button';
 
 const InputRow = styled.div<{ selected: boolean }>`
   display: flex;

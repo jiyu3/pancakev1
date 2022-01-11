@@ -1,4 +1,4 @@
-import { darkColors, lightColors } from "../../theme/colors";
+import { darkColors, lightColors } from "../colors";
 
 export type AlertTheme = {
   background: string;

@@ -84,6 +84,7 @@ export default function App() {
     }
   }, [])
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const fetchTranslationsForSelectedLanguage = async () => {
     stringTranslationsApi
       .listLanguageTranslations(projectId, selectedLanguage.code, undefined, fileId, 200)

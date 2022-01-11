@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import { LinkExternal } from '@pancakeswap-libs/uikit'
-import { Button } from '../Button';
 import { ArrowUpCircle } from 'react-feather'
 import { AutoColumn } from '../Column'
 import { getBscScanLink } from '../../utils'
 import { Wrapper, Section, ConfirmedIcon, ContentHeader } from './helpers'
 import ChainId from '../../constants/chainIds'
+import { Button } from '../Button';
 
 type TransactionSubmittedContentProps = {
   onDismiss: () => void

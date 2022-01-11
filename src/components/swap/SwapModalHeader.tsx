@@ -2,7 +2,6 @@ import React, { useContext, useMemo } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 import { Trade, TradeType } from '@pancakeswap/sdk'
 import { Text } from '@pancakeswap-libs/uikit'
-import { Button } from '../Button';
 import { ArrowDown, AlertTriangle } from 'react-feather'
 import { Field } from '../../state/swap/actions'
 import { isAddress, shortenAddress } from '../../utils'
@@ -11,6 +10,7 @@ import { AutoColumn } from '../Column'
 import CurrencyLogo from '../CurrencyLogo'
 import { RowBetween, RowFixed } from '../Row'
 import { SwapShowAcceptChanges } from './styleds'
+import { Button } from '../Button';
 
 const PriceInfoText = styled(Text)`
   font-style: italic;

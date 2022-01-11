@@ -1,5 +1,5 @@
 
-import { darkColors, lightColors } from "../../theme/colors";
+import { darkColors, lightColors } from "../colors";
 
 export interface ModalTheme {
   background: string;

@@ -2,7 +2,6 @@ import React, { useContext, useMemo } from 'react'
 import { ThemeContext } from 'styled-components'
 import { Pair } from '@pancakeswap/sdk'
 import { CardBody, Text } from '@pancakeswap-libs/uikit'
-import { Button } from '../../components/Button';
 import { Link } from 'react-router-dom'
 import Question from 'components/QuestionHelper'
 import FullPositionCard from 'components/PositionCard'
@@ -19,6 +18,7 @@ import { Dots } from 'components/swap/styleds'
 import useI18n from 'hooks/useI18n'
 import PageHeader from 'components/PageHeader'
 import AppBody from '../AppBody'
+import { Button } from '../../components/Button';
 
 export default function Pool() {
   const theme = useContext(ThemeContext)

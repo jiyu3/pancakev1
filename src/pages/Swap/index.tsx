@@ -2,7 +2,6 @@ import { CurrencyAmount, JSBI, Token, Trade } from '@pancakeswap/sdk'
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { ArrowDown } from 'react-feather'
 import { CardBody, ArrowDownIcon, IconButton, Text } from '@pancakeswap-libs/uikit'
-import { Button } from '../../components/Button';
 import { ThemeContext } from 'styled-components'
 import AddressInputPanel from 'components/AddressInputPanel'
 import Card, { GreyCard } from 'components/Card'
@@ -36,6 +35,7 @@ import useI18n from 'hooks/useI18n'
 import PageHeader from 'components/PageHeader'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import AppBody from '../AppBody'
+import { Button } from '../../components/Button';
 
 const Swap = () => {
   const loadedUrlParams = useDefaultsFromURLSearch()
