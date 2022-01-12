@@ -1,5 +1,6 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 import { save, load } from 'redux-localstorage-simple'
+import { useDispatch } from 'react-redux'
 
 import application from './application/reducer'
 import { updateVersion } from './global/actions'
@@ -7,6 +8,7 @@ import user from './user/reducer'
 import transactions from './transactions/reducer'
 import swap from './swap/reducer'
 import mint from './mint/reducer'
+import farmsReducer from './farms'
 import lists from './lists/reducer'
 import burn from './burn/reducer'
 import multicall from './multicall/reducer'
@@ -38,7 +40,8 @@ const store = configureStore({
     burn,
     multicall,
     lists,
-    toasts
+    toasts,
+    farms: farmsReducer
   },
   middleware: [...getDefaultMiddleware({ thunk: false }), savedState],
   // preloadedState: loadedState,
@@ -50,3 +53,4 @@ export default store
 
 export type AppState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
+export const useAppDispatch = () => useDispatch()

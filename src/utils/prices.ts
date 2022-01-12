@@ -1,4 +1,4 @@
-import { CurrencyAmount, Fraction, JSBI, Percent, TokenAmount, Trade } from '@pancakeswap/sdk'
+import { CurrencyAmount, Fraction, JSBI, Percent, Price, TokenAmount, Trade } from '@pancakeswap/sdk'
 import {
   BLOCKED_PRICE_IMPACT_NON_EXPERT,
   ALLOWED_PRICE_IMPACT_HIGH,
@@ -78,4 +78,15 @@ export function formatExecutionPrice(trade?: Trade, inverted?: boolean): string 
     : `${trade.executionPrice.toSignificant(6)} ${trade.outputAmount.currency.symbol} / ${
         trade.inputAmount.currency.symbol
       }`
+}
+
+/**
+ * Helper to multiply a Price object by an arbitrary amount
+ */
+ export const multiplyPriceByAmount = (price: Price, amount: number, significantDigits = 18) => {
+  if (!price) {
+    return 0
+  }
+
+  return parseFloat(price.toSignificant(significantDigits)) * amount
 }

@@ -13,6 +13,11 @@ export interface SerializedPair {
   token1: SerializedToken
 }
 
+export enum ViewMode {
+  TABLE = 'TABLE',
+  CARD = 'CARD',
+}
+
 export const updateMatchesDarkMode = createAction<{ matchesDarkMode: boolean }>('user/updateMatchesDarkMode')
 export const updateUserDarkMode = createAction<{ userDarkMode: boolean }>('user/updateUserDarkMode')
 export const updateUserExpertMode = createAction<{ userExpertMode: boolean }>('user/updateUserExpertMode')
