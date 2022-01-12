@@ -41,7 +41,7 @@ import { Dots } from '../../components/swap/styleds'
 import { useBurnActionHandlers, useDerivedBurnInfo, useBurnState } from '../../state/burn/hooks'
 
 import { Field } from '../../state/burn/actions'
-import { useUserDeadline, useUserSlippageTolerance } from '../../state/user/hooks'
+import { useUserDeadline, useUserSlippageTolerance } from '../../state/user/hooks/index'
 
 const OutlineCard = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.borderColor};

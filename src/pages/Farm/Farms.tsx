@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import { useFarms, usePollFarmsWithUserData, usePriceCakeBusd } from 'state/farms/hooks'
 import useIntersectionObserver from 'hooks/useIntersectionObserver'
 import { DeserializedFarm } from 'state/types'
-import { useTranslation } from 'contexts/Localization'
+// import { useTranslation } from 'contexts/Localization'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { getFarmApr } from 'utils/apr'
 import isArchivedPid from 'utils/farmHelpers'
@@ -114,7 +114,7 @@ const getDisplayApr = (cakeRewardsApr?: number, lpRewardsApr?: number) => {
 const Farms: React.FC = () => {
   const { path } = useRouteMatch()
   const { pathname } = useLocation()
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
   const { data: farmsLP, userDataLoaded } = useFarms()
   const cakePrice = usePriceCakeBusd()
   const [query, setQuery] = useState('')
@@ -257,15 +257,15 @@ const Farms: React.FC = () => {
     <>
       <PageTitle>
         <Heading as="h1" scale="xxl" color="secondary" mb="24px">
-          {t('Farms')}
+          Farms
         </Heading>
         <Heading scale="lg" color="text">
-          {t('Stake LP tokens to earn.')}
+          Stake LP tokens to earn.
         </Heading>
         <NavLink exact activeClassName="active" to="/farms/auction" id="lottery-pot-banner">
           <Button p="0" variant="text">
             <Text color="primary" bold fontSize="16px" mr="4px">
-              {t('Community Auctions')}
+              Community Auctions
             </Text>
             <ArrowForwardIcon color="primary" />
           </Button>
@@ -275,27 +275,27 @@ const Farms: React.FC = () => {
         <ControlContainer>
           <FilterContainer>
             <LabelWrapper>
-              <Text textTransform="uppercase">{t('Sort by')}</Text>
+              <Text textTransform="uppercase">Sort by</Text>
               <Select
                 options={[
                   {
-                    label: t('Hot'),
+                    label: 'Hot',
                     value: 'hot',
                   },
                   {
-                    label: t('APR'),
+                    label: 'APR',
                     value: 'apr',
                   },
                   {
-                    label: t('Multiplier'),
+                    label: 'Multiplier',
                     value: 'multiplier',
                   },
                   {
-                    label: t('Earned'),
+                    label: 'Earned',
                     value: 'earned',
                   },
                   {
-                    label: t('Liquidity'),
+                    label: 'Liquidity',
                     value: 'liquidity',
                   },
                 ]}
@@ -303,7 +303,7 @@ const Farms: React.FC = () => {
               />
             </LabelWrapper>
             <LabelWrapper style={{ marginLeft: 16 }}>
-              <Text textTransform="uppercase">{t('Search')}</Text>
+              <Text textTransform="uppercase">Search</Text>
               <SearchInput onChange={handleChangeQuery} placeholder="Search Farms" />
             </LabelWrapper>
           </FilterContainer>

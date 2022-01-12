@@ -1,5 +1,5 @@
 import { Token } from '@pancakeswap/sdk'
-import { serializeToken } from 'state/user/hooks'
+import { serializeToken } from 'state/user/hooks/helpers'
 import ChainId from '../chainIds'
 
 export interface SerializedToken {

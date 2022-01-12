@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { keyframes, css } from 'styled-components'
-import { useTranslation } from 'contexts/Localization'
+// import { useTranslation } from 'contexts/Localization'
 import { LinkExternal, Text } from '@pancakeswap/uikit'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import { getAddress } from 'utils/addressHelpers'
@@ -141,7 +141,7 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
   const farm = details
 
   const { chainId } = useActiveWeb3React()
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
   const isActive = farm.multiplier !== '0X'
   const { quoteToken, token, dual } = farm
   const lpLabel = farm.lpSymbol && farm.lpSymbol.toUpperCase().replace('PANCAKE', '')
@@ -159,12 +159,12 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
         {isActive && (
           <StakeContainer>
             <StyledLinkExternal href={`/add/${liquidityUrlPathParts}`}>
-              {t('Get %symbol%', { symbol: lpLabel })}
+              {`Get ${lpLabel}`}
             </StyledLinkExternal>
           </StakeContainer>
         )}
-        <StyledLinkExternal href={bsc}>{t('View Contract')}</StyledLinkExternal>
-        <StyledLinkExternal href={info}>{t('See Pair Info')}</StyledLinkExternal>
+        <StyledLinkExternal href={bsc}>View Contract</StyledLinkExternal>
+        <StyledLinkExternal href={info}>See Pair Info</StyledLinkExternal>
         <TagsContainer>
           {farm.isCommunity ? <CommunityTag /> : <CoreTag />}
           {dual ? <DualTag /> : null}
@@ -172,15 +172,15 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
       </InfoContainer>
       <ValueContainer>
         <ValueWrapper>
-          <Text>{t('APR')}</Text>
+          <Text>APR</Text>
           <Apr {...apr} />
         </ValueWrapper>
         <ValueWrapper>
-          <Text>{t('Multiplier')}</Text>
+          <Text>Multiplier</Text>
           <Multiplier {...multiplier} />
         </ValueWrapper>
         <ValueWrapper>
-          <Text>{t('Liquidity')}</Text>
+          <Text>Liquidity</Text>
           <Liquidity {...liquidity} />
         </ValueWrapper>
       </ValueContainer>

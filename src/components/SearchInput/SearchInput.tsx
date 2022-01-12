@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react'
 import { Input } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import debounce from 'lodash/debounce'
-import { useTranslation } from 'contexts/Localization'
+// import { useTranslation } from 'contexts/Localization'
 
 const StyledInput = styled(Input)`
   border-radius: 16px;
@@ -24,7 +24,7 @@ interface Props {
 const SearchInput: React.FC<Props> = ({ onChange: onChangeCallback, placeholder = 'Search' }) => {
   const [searchText, setSearchText] = useState('')
 
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
 
   const debouncedOnChange = useMemo(
     () => debounce((e: React.ChangeEvent<HTMLInputElement>) => onChangeCallback(e), 500),
@@ -38,7 +38,7 @@ const SearchInput: React.FC<Props> = ({ onChange: onChangeCallback, placeholder 
 
   return (
     <InputWrapper>
-      <StyledInput value={searchText} onChange={onChange} placeholder={t(placeholder)} />
+      <StyledInput value={searchText} onChange={onChange} placeholder={placeholder} />
     </InputWrapper>
   )
 }

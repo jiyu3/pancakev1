@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useFarmUser } from 'state/farms/hooks'
-import { useTranslation } from 'contexts/Localization'
+// import { useTranslation } from 'contexts/Localization'
 import { Text } from '@pancakeswap/uikit'
 import { Token } from '@pancakeswap/sdk'
 import { getBalanceNumber } from 'utils/formatBalance'
@@ -35,14 +35,14 @@ const TokenWrapper = styled.div`
 
 const Farm: React.FunctionComponent<FarmProps> = ({ token, quoteToken, label, pid }) => {
   const { stakedBalance } = useFarmUser(pid)
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
   const rawStakedBalance = getBalanceNumber(stakedBalance)
 
   const handleRenderFarming = (): JSX.Element => {
     if (rawStakedBalance) {
       return (
         <Text color="secondary" fontSize="12px" bold textTransform="uppercase">
-          {t('Farming')}
+          Farming
         </Text>
       )
     }

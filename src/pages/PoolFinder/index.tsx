@@ -10,7 +10,7 @@ import { MinimalPositionCard } from 'components/PositionCard'
 import CurrencySearchModal from 'components/SearchModal/CurrencySearchModal'
 import { PairState, usePair } from 'data/Reserves'
 import { useActiveWeb3React } from 'hooks'
-import { usePairAdder } from 'state/user/hooks'
+import { usePairAdder } from 'state/user/hooks/index'
 import { useTokenBalance } from 'state/wallet/hooks'
 import { StyledInternalLink } from 'components/Shared'
 import { currencyId } from 'utils/currencyId'
@@ -169,7 +169,6 @@ export default function PoolFinder() {
           </AutoColumn>
 
           <CurrencySearchModal
-            isOpen={showSearch}
             onCurrencySelect={handleCurrencySelect}
             onDismiss={handleSearchDismiss}
             showCommonBases

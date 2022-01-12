@@ -6,7 +6,7 @@ import BigNumber from 'bignumber.js'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { getBalanceAmount } from 'utils/formatBalance'
 import { useSlowFresh, useFastFresh } from 'hooks/useRefresh'
-import { deserializeToken } from 'state/user/hooks'
+import { deserializeToken } from 'state/user/hooks/helpers'
 import { farmsConfig } from "../../constants"
 import { fetchFarmsPublicDataAsync, fetchFarmUserDataAsync, nonArchivedFarms } from '.'
 import { State, SerializedFarm, DeserializedFarmUserData, DeserializedFarm, DeserializedFarmsState } from '../types'
