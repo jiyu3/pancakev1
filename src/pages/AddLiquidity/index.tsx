@@ -287,6 +287,13 @@ export default function AddLiquidity({
     setTxHash('')
   }, [onFieldAInput, txHash])
 
+  if(currencies.CURRENCY_A?.name === "BNB") {
+    Object.assign(currencies.CURRENCY_A, { name: "SDN", symbol: "SDN" })
+  }
+  if(currencies.CURRENCY_B?.name === "BNB") {
+    Object.assign(currencies.CURRENCY_B, { name: "SDN", symbol: "SDN" })
+  }
+
   return (
     <>
       <AppBody>
