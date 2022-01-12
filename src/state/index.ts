@@ -41,7 +41,7 @@ const store = configureStore({
     toasts
   },
   middleware: [...getDefaultMiddleware({ thunk: false }), savedState],
-  preloadedState: loadedState,
+  // preloadedState: loadedState,
 })
 
 store.dispatch(updateVersion())
