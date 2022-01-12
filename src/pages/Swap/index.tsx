@@ -271,6 +271,13 @@ const Swap = () => {
     },
     [onCurrencySelection, checkForWarning]
   )
+  
+  if(currencies.INPUT?.name === "BNB") {
+    Object.assign(currencies.INPUT, { name: "SDN", symbol: "SDN" })
+  }
+  if(currencies.OUTPUT?.name === "BNB") {
+    Object.assign(currencies.OUTPUT, { name: "SDN", symbol: "SDN" })
+  }
 
   return (
     <>

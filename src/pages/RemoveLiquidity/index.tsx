@@ -444,6 +444,13 @@ export default function RemoveLiquidity({
     liquidityPercentChangeCallback
   )
 
+  if(currencyA?.name === "BNB") {
+    Object.assign(currencyA, { name: "SDN", symbol: "SDN" })
+  }
+  if(currencyB?.name === "BNB") {
+    Object.assign(currencyB, { name: "SDN", symbol: "SDN" })
+  }
+
   return (
     <>
       <AppBody>
