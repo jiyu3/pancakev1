@@ -14,22 +14,22 @@ import {
 describe('utils', () => {
   describe('#getBscScanLink', () => {
     xit('correct for tx', () => {
-      expect(getBscScanLink(1, 'abc', 'transaction')).toEqual('https://bscscan.com/tx/abc')
+      expect(getBscScanLink(1, 'abc', 'transaction')).toEqual('https://subscan.io/tx/abc')
     })
     xit('correct for token', () => {
-      expect(getBscScanLink(1, 'abc', 'token')).toEqual('https://bscscan.com/token/abc')
+      expect(getBscScanLink(1, 'abc', 'token')).toEqual('https://subscan.io/token/abc')
     })
     xit('correct for address', () => {
-      expect(getBscScanLink(1, 'abc', 'address')).toEqual('https://bscscan.com/address/abc')
+      expect(getBscScanLink(1, 'abc', 'address')).toEqual('https://subscan.io/address/abc')
     })
     xit('unrecognized chain id defaults to mainnet', () => {
-      expect(getBscScanLink(2, 'abc', 'address')).toEqual('https://bscscan.com/address/abc')
+      expect(getBscScanLink(2, 'abc', 'address')).toEqual('https://subscan.io/address/abc')
     })
     xit('ropsten', () => {
-      expect(getBscScanLink(3, 'abc', 'address')).toEqual('https://bscscan.com/address/abc')
+      expect(getBscScanLink(3, 'abc', 'address')).toEqual('https://subscan.io/address/abc')
     })
     xit('enum', () => {
-      expect(getBscScanLink(ChainId.MAINNET, 'abc', 'address')).toEqual('https://bscscan.com/address/abc')
+      expect(getBscScanLink(ChainId.MAINNET, 'abc', 'address')).toEqual('https://subscan.io/address/abc')
     })
   })
 
