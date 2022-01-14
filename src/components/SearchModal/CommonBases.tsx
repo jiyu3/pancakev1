@@ -39,8 +39,8 @@ export default function CommonBases({
   return (
     <AutoColumn gap="md">
       <AutoRow>
-        <Text fontSize="14px">{t('Common bases')}</Text>
-        <QuestionHelper text={t('These tokens are commonly paired with other tokens.')} />
+        <Text fontSize="14px">Common bases</Text>
+        <QuestionHelper text="These tokens are commonly paired with other tokens." />
       </AutoRow>
       <AutoRow gap="auto">
         <BaseWrapper

@@ -3,7 +3,7 @@ import { Token } from '@pancakeswap/sdk'
 import { ButtonMenu, ButtonMenuItem, ModalBody } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { TokenList } from '@uniswap/token-lists'
-import { useTranslation } from 'contexts/Localization'
+// import { useTranslation } from 'contexts/Localization'
 import ManageLists from './ManageLists'
 import ManageTokens from './ManageTokens'
 import { CurrencyModalView } from './types'
@@ -25,7 +25,7 @@ export default function Manage({
 }) {
   const [showLists, setShowLists] = useState(true)
 
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
 
   return (
     <ModalBody>
@@ -36,8 +36,8 @@ export default function Manage({
         variant="subtle"
         mb="32px"
       >
-        <ButtonMenuItem width="50%">{t('Lists')}</ButtonMenuItem>
-        <ButtonMenuItem width="50%">{t('Tokens')}</ButtonMenuItem>
+        <ButtonMenuItem width="50%">Lists</ButtonMenuItem>
+        <ButtonMenuItem width="50%">Tokens</ButtonMenuItem>
       </StyledButtonMenu>
       {showLists ? (
         <ManageLists setModalView={setModalView} setImportList={setImportList} setListUrl={setListUrl} />

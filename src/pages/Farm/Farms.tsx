@@ -1,25 +1,25 @@
-import React, { useEffect, useCallback, useState, useMemo, useRef } from 'react'
-import { Route, useRouteMatch, useLocation, NavLink } from 'react-router-dom'
+import React, { useCallback, useState, useMemo, useRef } from 'react'
+import { useRouteMatch, useLocation, NavLink } from 'react-router-dom'
 import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
-import { Image, Heading, RowType, Toggle, Text, Button, ArrowForwardIcon, Flex } from '@pancakeswap/uikit'
+import { Heading, RowType, Toggle, Text, ArrowForwardIcon, Flex } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { useFarms, usePollFarmsWithUserData, usePriceCakeBusd } from 'state/farms/hooks'
 import useIntersectionObserver from 'hooks/useIntersectionObserver'
 import { DeserializedFarm } from 'state/types'
-// import { useTranslation } from 'contexts/Localization'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { getFarmApr } from 'utils/apr'
 import isArchivedPid from 'utils/farmHelpers'
 import { latinise } from 'utils/latinise'
-import PageTitle from 'components/PageTitle'
 import SearchInput from 'components/SearchInput'
 import Select, { OptionProps } from 'components/Select/Select'
 import Loading from 'components/Loading'
+import { Button } from 'components/Button'
 import Table from './components/FarmTable/FarmTable'
 import { RowProps } from './components/FarmTable/Row'
 import { DesktopColumnSchema } from './components/types'
 import ChainId from '../../constants/chainIds'
+
 
 export interface FarmWithStakedValue extends DeserializedFarm {
   apr?: number
@@ -27,7 +27,58 @@ export interface FarmWithStakedValue extends DeserializedFarm {
   liquidity?: BigNumber
 }
 
+const PageWrapper = styled.div`
+  max-width: 1000px;
+  width: 100%;
+`
+
+const PageBoard = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+  align-items: center;
+  background: linear-gradient(90.86deg, rgba(27, 169, 193, 0.2) 0%, rgba(27, 109, 193, 0) 100%), radial-gradient(49.54% 4294% at 50% 50%, rgba(27, 109, 193, 0.2) 0%, rgba(27, 109, 193, 0.2) 52.6%, rgba(27, 109, 193, 0) 100%), #0A1627;
+  border: 1px solid #C6D3E1;
+  box-sizing: border-box;
+  border-radius: 8px;
+  text-align: center;
+  > * + * {
+    margin: 8px;
+  }
+`
+
+const BoardTitle = styled(Heading)`
+  color:#FFFFFF;
+`
+
+const BoardDescription = styled(Heading)`
+  color:#FFFFFF;
+`
+
 const ControlContainer = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 32px;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 16px 32px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+`
+
+const ValuationContainer = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
@@ -42,6 +93,9 @@ const ControlContainer = styled.div`
     flex-wrap: wrap;
     padding: 16px 32px;
     margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
   }
 `
 
@@ -73,32 +127,6 @@ const FilterContainer = styled.div`
   }
 `
 
-const ViewControls = styled.div`
-  flex-wrap: wrap;
-  justify-content: space-between;
-  display: flex;
-  align-items: center;
-  width: 100%;
-
-  > div {
-    padding: 8px 0px;
-  }
-
-  ${({ theme }) => theme.mediaQueries.sm} {
-    justify-content: flex-start;
-    width: auto;
-
-    > div {
-      padding: 0;
-    }
-  }
-`
-
-const StyledImage = styled(Image)`
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 58px;
-`
 const NUMBER_OF_FARMS_VISIBLE = 12
 
 const getDisplayApr = (cakeRewardsApr?: number, lpRewardsApr?: number) => {
@@ -254,25 +282,28 @@ const Farms: React.FC = () => {
   }
 
   return (
-    <>
-      <PageTitle>
-        <Heading as="h1" scale="xxl" color="secondary" mb="24px">
-          Farms
-        </Heading>
-        <Heading scale="lg" color="text">
-          Stake LP tokens to earn.
-        </Heading>
-        <NavLink exact activeClassName="active" to="/farms/auction" id="lottery-pot-banner">
-          <Button p="0" variant="text">
-            <Text color="primary" bold fontSize="16px" mr="4px">
-              Community Auctions
-            </Text>
-            <ArrowForwardIcon color="primary" />
-          </Button>
-        </NavLink>
-      </PageTitle>
+    <PageWrapper>
+      <PageBoard>
+        <BoardTitle as="h1" scale="lg" mb="8px" bold>
+          Put more liquidity on Pool!
+        </BoardTitle>
+        <BoardDescription scale="md" color="text">
+          No need to stake, just hold LP tokens,
+        <br />
+          then you will earn ARSW tokens on 2022 Q1 depending on your amount of liquidity.
+        </BoardDescription>
+        <Button variant='tertiary'>View Detailes</Button>
+      </PageBoard>
       <>
         <ControlContainer>
+        <ValuationContainer>
+          <div>
+            <Text textTransform="capitalize">Total Value Locked</Text>
+            <Heading scale="xl" color="text">
+              $123,456,789
+            </Heading>
+          </div>
+        </ValuationContainer>
           <FilterContainer>
             <LabelWrapper>
               <Text textTransform="uppercase">Sort by</Text>
@@ -283,16 +314,12 @@ const Farms: React.FC = () => {
                     value: 'hot',
                   },
                   {
-                    label: 'APR',
-                    value: 'apr',
+                    label: 'APY',
+                    value: 'apy',
                   },
                   {
                     label: 'Multiplier',
                     value: 'multiplier',
-                  },
-                  {
-                    label: 'Earned',
-                    value: 'earned',
                   },
                   {
                     label: 'Liquidity',
@@ -311,13 +338,13 @@ const Farms: React.FC = () => {
         {renderContent()}
         {account && !userDataLoaded && (
           <Flex justifyContent="center">
+            {userDataLoaded}
             <Loading />
           </Flex>
         )}
         <div ref={observerRef} />
-        <StyledImage src="/images/decorations/3dpan.png" alt="Pancake illustration" width={120} height={103} />
       </>
-    </>
+    </PageWrapper>
   )
 }
 

@@ -5,7 +5,6 @@ import { LinkExternal, Text } from '@pancakeswap/uikit'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import { getAddress } from 'utils/addressHelpers'
 import { getBscScanLink } from 'utils'
-import { CommunityTag, CoreTag, DualTag } from 'components/Tags'
 import { useActiveWeb3React } from 'hooks'
 import { FarmWithStakedValue } from '../../../Farms'
 
@@ -151,7 +150,6 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
   })
   const lpAddress = getAddress(farm.lpAddresses)
   const bsc = getBscScanLink(chainId as number, lpAddress, 'address')
-  const info = `/info/pool/${lpAddress}`
 
   return (
     <Container expanded={expanded}>
@@ -164,11 +162,6 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
           </StakeContainer>
         )}
         <StyledLinkExternal href={bsc}>View Contract</StyledLinkExternal>
-        <StyledLinkExternal href={info}>See Pair Info</StyledLinkExternal>
-        <TagsContainer>
-          {farm.isCommunity ? <CommunityTag /> : <CoreTag />}
-          {dual ? <DualTag /> : null}
-        </TagsContainer>
       </InfoContainer>
       <ValueContainer>
         <ValueWrapper>
