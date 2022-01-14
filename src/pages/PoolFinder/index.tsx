@@ -169,6 +169,7 @@ export default function PoolFinder() {
           </AutoColumn>
 
           <CurrencySearchModal
+            isOpen={showSearch}
             onCurrencySelect={handleCurrencySelect}
             onDismiss={handleSearchDismiss}
             showCommonBases

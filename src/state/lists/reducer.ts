@@ -3,9 +3,10 @@ import { getVersionUpgrade, VersionUpgrade } from '@uniswap/token-lists'
 // eslint-disable-next-line import/no-unresolved
 import { TokenList } from '@uniswap/token-lists/dist/types'
 import { DEFAULT_ACTIVE_LIST_URLS, UNSUPPORTED_LIST_URLS, DEFAULT_LIST_OF_LISTS } from '../../constants/lists'
-
 import { updateVersion } from '../global/actions'
 import { acceptListUpdate, addList, fetchTokenList, removeList, enableList, disableList } from './actions'
+
+export const DEFAULT_TOKEN_LIST_URL = 'pancakeswap'
 
 export interface ListsState {
   readonly byUrl: {
@@ -21,6 +22,7 @@ export interface ListsState {
 
   // currently active lists
   readonly activeListUrls: string[] | undefined
+  readonly selectedListUrl: string | undefined
 }
 
 type ListState = ListsState['byUrl'][string]
@@ -42,6 +44,7 @@ export const initialState: ListsState = {
       return memo
     }, {}),
   },
+  selectedListUrl: DEFAULT_TOKEN_LIST_URL,
   activeListUrls: DEFAULT_ACTIVE_LIST_URLS,
 }
 

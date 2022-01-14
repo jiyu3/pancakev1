@@ -187,3 +187,37 @@ export function useIsListActive(url: string): boolean {
   const activeListUrls = useActiveListUrls()
   return Boolean(activeListUrls?.includes(url))
 }
+
+export function useTokenList(url: string | undefined): TokenAddressMap {
+  const lists = useSelector<AppState, AppState['lists']['byUrl']>(state => state.lists.byUrl)
+  return useMemo(() => {
+    if (!url) return EMPTY_LIST
+    const current = lists[url]?.current
+    if (!current) return EMPTY_LIST
+    try {
+      return listToTokenMap(current)
+    } catch (error) {
+      console.error('Could not show token list due to error', error)
+      return EMPTY_LIST
+    }
+  }, [lists, url])
+}
+
+export function useSelectedListUrl(): string | undefined {
+  return useSelector<AppState, AppState['lists']['selectedListUrl']>(state => state.lists.selectedListUrl)
+}
+
+export function useSelectedTokenList(): TokenAddressMap {
+  return useTokenList(useSelectedListUrl())
+}
+
+export function useSelectedListInfo(): { current: TokenList | null; pending: TokenList | null; loading: boolean } {
+  const selectedUrl = useSelectedListUrl()
+  const listsByUrl = useSelector<AppState, AppState['lists']['byUrl']>(state => state.lists.byUrl)
+  const list = selectedUrl ? listsByUrl[selectedUrl] : undefined
+  return {
+    current: list?.current ?? null,
+    pending: list?.pendingUpdate ?? null,
+    loading: list?.loadingRequestId !== null
+  }
+}
