@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Logo from '../Logo'
+import Logo from '../Logo/Logo'
 
 const CoinLogo = styled(Logo)<{ size: string }>`
   width: ${({ size }) => size};

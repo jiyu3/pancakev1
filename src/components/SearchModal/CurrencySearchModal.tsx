@@ -1,9 +1,10 @@
+
 import { Currency } from '@pancakeswap/sdk'
 import React, { useCallback, useEffect, useState } from 'react'
 import useLast from '../../hooks/useLast'
 import { useSelectedListUrl } from '../../state/lists/hooks'
 import Modal from '../Modal'
-import { CurrencySearch } from './CurrencySearch'
+import CurrencySearch from './CurrencySearch'
 import { ListSelect } from './ListSelect'
 
 interface CurrencySearchModalProps {

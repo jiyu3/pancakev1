@@ -22,7 +22,7 @@ import CommonBases from './CommonBases'
 import CurrencyList from './CurrencyList'
 import { filterTokens } from './filtering'
 import SortButton from './SortButton'
-import { useTokenComparator } from './sorting'
+import useTokenComparator from './sorting'
 import { PaddedColumn, SearchInput, Separator } from './styleds'
 
 interface CurrencySearchProps {
@@ -155,7 +155,7 @@ export function CurrencySearch({
         <SearchInput
           type="text"
           id="token-search-input"
-          placeholder={t('tokenSearchPlaceholder')}
+          placeholder="tokenSearchPlaceholder"
           value={searchQuery}
           ref={inputRef as RefObject<HTMLInputElement>}
           onChange={handleInput}

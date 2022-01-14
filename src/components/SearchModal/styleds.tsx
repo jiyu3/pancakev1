@@ -41,9 +41,7 @@ export const SearchInput = styled.input`
   border-style: solid;
   border: 1px solid ${({ theme }) => theme.colors.tertiary};
   -webkit-appearance: none;
-
   font-size: 18px;
-
   ::placeholder {
     color: ${({ theme }) => theme.colors.textDisabled};
   }

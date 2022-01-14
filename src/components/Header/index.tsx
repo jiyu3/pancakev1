@@ -100,7 +100,7 @@ const UikitMenu: React.FC<NavProps> = ({
         <NavList>
           <NavItem isActive={location.pathname === '/swap'} to="/swap">Swap</NavItem>
           <NavItem isActive={location.pathname === '/pool'} to="/pool">Pool</NavItem>
-          <NavItem isActive={location.pathname === '/farm'} to="/">Farm</NavItem>
+          <NavItem isActive={location.pathname === '/farms'} to="/farms">Farm</NavItem>
           <Tooltip text="Available in Feb">
             <DisabledNavItem to="/">Stake</DisabledNavItem>
           </Tooltip>

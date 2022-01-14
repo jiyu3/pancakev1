@@ -3,7 +3,7 @@ import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import useHttpLocations from '../../hooks/useHttpLocations'
 import { WrappedTokenInfo } from '../../state/lists/hooks'
-import Logo from '../Logo'
+import Logo from '../Logo/Logo'
 import CoinLogo from '../pancake/CoinLogo'
 
 const getTokenLogoURL = (address: string) =>
