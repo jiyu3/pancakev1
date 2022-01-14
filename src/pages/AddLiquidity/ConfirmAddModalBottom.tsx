@@ -1,7 +1,7 @@
 import { Currency, CurrencyAmount, Fraction, Percent } from '@pancakeswap/sdk'
 import React from 'react'
 import { Text } from '@pancakeswap-libs/uikit'
-import { TranslateString } from 'utils/translateTextHelpers'
+// import { TranslateString } from 'utils/translateTextHelpers'
 import { RowBetween, RowFixed } from '../../components/Row'
 import CurrencyLogo from '../../components/CurrencyLogo'
 import { Field } from '../../state/mint/actions'
