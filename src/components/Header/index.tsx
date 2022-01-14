@@ -6,7 +6,7 @@ import useTheme from 'hooks/useTheme'
 import useGetPriceData from 'hooks/useGetPriceData'
 import useGetLocalProfile from 'hooks/useGetLocalProfile'
 import useAuth from 'hooks/useAuth'
-import { Flex, NavProps } from '@pancakeswap-libs/uikit'
+import { Flex, NavProps, LogoIcon } from '@pancakeswap-libs/uikit'
 import styled from "styled-components";
 import { Link, useLocation } from 'react-router-dom'
 import {MouseoverTooltip as Tooltip} from '../Tooltip'
@@ -14,6 +14,7 @@ import links from './config'
 import { CAKE } from '../../constants'
 import UserBlock from "./UserBlock";
 import { MENU_HEIGHT } from './types'
+import Logo from '../Logo'
 
 const Wrapper = styled.div`
   position: relative;
@@ -50,7 +51,7 @@ const Inner = styled.div`
   margin-top: 48px;
 `;
 
-const Logo = styled.div`
+const LogoWrapper = styled.div`
   width: 176px;
   height: 40px;
   background-color: #DBEAFE;
@@ -96,7 +97,9 @@ const UikitMenu: React.FC<NavProps> = ({
   return (
     <Wrapper>
       <StyledNav >
-        <Logo as={Link} to="/">ArthSwap</Logo>
+        <Link to="/">
+          <Logo srcs={["/images/arthswaplogo.svg"]} alt='arth swap logo' />
+        </Link>
         <NavList>
           <NavItem isActive={location.pathname === '/swap'} to="/swap">Swap</NavItem>
           <NavItem isActive={location.pathname === '/pool'} to="/pool">Pool</NavItem>
