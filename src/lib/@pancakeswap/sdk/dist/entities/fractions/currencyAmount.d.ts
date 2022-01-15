@@ -1,7 +1,8 @@
 import { Currency } from '../currency';
 import JSBI from 'jsbi';
-import { BigintIsh, Rounding } from '../../constants';
+import { Rounding } from '../../constants';
 import { Fraction } from './fraction';
+export declare type BigintIsh = JSBI | bigint | string;
 export declare class CurrencyAmount extends Fraction {
     readonly currency: Currency;
     /**

@@ -1,8 +1,10 @@
-import { BigintIsh, Rounding } from '../../constants';
+import JSBI from 'jsbi';
+import { Rounding } from '../../constants';
 import { Currency } from '../currency';
 import { Route } from '../route';
 import { Fraction } from './fraction';
 import { CurrencyAmount } from './currencyAmount';
+declare type BigintIsh = JSBI | bigint | string;
 export declare class Price extends Fraction {
     readonly baseCurrency: Currency;
     readonly quoteCurrency: Currency;
@@ -17,3 +19,4 @@ export declare class Price extends Fraction {
     toSignificant(significantDigits?: number, format?: object, rounding?: Rounding): string;
     toFixed(decimalPlaces?: number, format?: object, rounding?: Rounding): string;
 }
+export {};

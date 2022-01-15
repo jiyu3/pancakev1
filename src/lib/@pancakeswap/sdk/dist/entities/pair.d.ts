@@ -1,7 +1,9 @@
 import { Price } from './fractions/price';
 import { TokenAmount } from './fractions/tokenAmount';
-import { BigintIsh, ChainId } from '../constants';
+import JSBI from 'jsbi';
+import { ChainId } from '../constants';
 import { Token } from './token';
+declare type BigintIsh = JSBI | bigint | string;
 export declare class Pair {
     readonly liquidityToken: Token;
     private readonly tokenAmounts;
@@ -39,3 +41,4 @@ export declare class Pair {
     getLiquidityMinted(totalSupply: TokenAmount, tokenAmountA: TokenAmount, tokenAmountB: TokenAmount): TokenAmount;
     getLiquidityValue(token: Token, totalSupply: TokenAmount, liquidity: TokenAmount, feeOn?: boolean, kLast?: BigintIsh): TokenAmount;
 }
+export {};
