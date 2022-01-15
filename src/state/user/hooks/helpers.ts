@@ -1,4 +1,4 @@
-import { Token } from '@pancakeswap/sdk'
+import { Token } from 'lib/@pancakeswap/sdk'
 import { SerializedToken } from 'constants/types'
 import { parseUnits } from 'ethers/lib/utils'
 

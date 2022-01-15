@@ -1,4 +1,4 @@
-import { Currency, currencyEquals, JSBI, Price } from '@pancakeswap/sdk'
+import { Currency, currencyEquals, JSBI, Price } from 'lib/@pancakeswap/sdk'
 import { useMemo } from 'react'
 import useActiveWeb3React from "./useActiveWeb3React"
 import { multiplyPriceByAmount } from '../utils/prices'

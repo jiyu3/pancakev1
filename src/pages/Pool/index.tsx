@@ -1,6 +1,6 @@
 import React, { useContext, useMemo } from 'react'
 import { ThemeContext } from 'styled-components'
-import { Pair } from '@pancakeswap/sdk'
+import { Pair } from 'lib/@pancakeswap/sdk'
 import { CardBody, Text } from '@pancakeswap-libs/uikit'
 import { Link } from 'react-router-dom'
 import Question from 'components/QuestionHelper'

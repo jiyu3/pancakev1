@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js'
-import { Token } from '@pancakeswap/sdk'
+import { Token } from 'lib/@pancakeswap/sdk'
 
 export interface Address {
   56?: string

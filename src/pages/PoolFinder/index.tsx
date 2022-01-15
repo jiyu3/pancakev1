@@ -1,4 +1,4 @@
-import { Currency, ETHER, JSBI, TokenAmount } from '@pancakeswap/sdk'
+import { Currency, ETHER, JSBI, TokenAmount } from 'lib/@pancakeswap/sdk'
 import React, { useCallback, useEffect, useState } from 'react'
 import { Button, ChevronDownIcon, AddIcon, CardBody, Text } from '@pancakeswap-libs/uikit'
 import CardNav from 'components/CardNav'
@@ -81,7 +81,6 @@ export default function PoolFinder() {
 
   return (
     <>
-      <CardNav activeIndex={1} />
       <AppBody>
         <FindPoolTabs />
         <CardBody>

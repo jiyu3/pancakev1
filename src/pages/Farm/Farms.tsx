@@ -232,10 +232,6 @@ const Farms: React.FC = () => {
         token: farm.token,
         quoteToken: farm.quoteToken,
       },
-      earned: {
-        earnings: getBalanceNumber(new BigNumber(farm.userData?.earnings || 0)),
-        pid: farm.pid,
-      },
       liquidity: {
         liquidity: farm.liquidity || new BigNumber(0),
       },
@@ -265,8 +261,6 @@ const Farms: React.FC = () => {
             }
 
             return 0
-        case 'earned':
-            return a.original.earned.earnings - b.original.earned.earnings
         default:
             return 1
         }
@@ -290,7 +284,7 @@ const Farms: React.FC = () => {
         <BoardDescription scale="md" color="text">
           No need to stake, just hold LP tokens,
         <br />
-          then you will earn ARSW tokens on 2022 Q1 depending on your amount and duration of liquidity.
+          then you will earn ARSW tokens on 2022 Q1 depending on your amount of liquidity.
         </BoardDescription>
         <Button variant='tertiary'>View Detailes</Button>
       </PageBoard>
