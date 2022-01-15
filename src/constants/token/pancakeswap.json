@@ -27,14 +27,6 @@
       "logoURI": "https://exchange.pancakeswap.finance/images/coins/0xe9e7cea3dedca5984780bafc599bd69add087d56.png"
     },
     {
-      "name": "Tether",
-      "symbol": "USDT",
-      "address": "0x818ec0a7fe18ff94269904fced6ae3dae6d6dc0b",
-      "chainId": 336,
-      "decimals": 6,
-      "logoURI": "https://exchange.pancakeswap.finance/images/coins/0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c.png"
-    },
-    {
       "name": "Tanuma Token",
       "symbol": "TNM",
       "address": "0x938BCe03532A3845Ec0aB75069E3d84f9cd2826f",

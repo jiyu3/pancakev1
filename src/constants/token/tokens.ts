@@ -22,14 +22,14 @@ const defineTokens = <T extends TokenList>(t: T) => t
 export const mainnetTokens = defineTokens({
   wbnb: new Token(
     MAINNET,
-    '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
+    '0x0f933Dc137D21cA519ae4C7E93f87a4C8EF365Ef',
     18,
-    'WBNB',
-    'Wrapped BNB',
+    'WSDN',
+    'Wrapped SDN',
     'https://www.binance.com/',
   ),
   // bnb here points to the wbnb contract. Wherever the currency BNB is required, conditional checks for the symbol 'BNB' can be used
-  bnb: new Token(MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'BNB', 'BNB', 'https://www.binance.com/'),
+  bnb: new Token(MAINNET, '0x0f933Dc137D21cA519ae4C7E93f87a4C8EF365Ef', 18, 'SDN', 'SDN', 'https://www.binance.com/'),
   cake: new Token(
     MAINNET,
     '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
@@ -1978,14 +1978,6 @@ export const testnetTokens = defineTokens({
     'TNM Token',
     'https://powerpool.finance/',
   ),
-  wbnb: new Token(
-    336,
-    '0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F',
-    18,
-    'WBNB',
-    'Wrapped BNB',
-    'https://www.binance.com/',
-  ),
   cake: new Token(
     336,
     '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
@@ -2017,6 +2009,22 @@ export const testnetTokens = defineTokens({
     'BAKE',
     'Bakeryswap Token',
     'https://www.bakeryswap.org/',
+  ),
+  usdc: new Token(
+    336,
+    '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
+    18,
+    'USDC',
+    'Binance-Peg USD Coin',
+    'https://www.centre.io/usdc',
+  ),
+  usdt: new Token(
+    336,
+    '0x55d398326f99059fF775485246999027B3197955',
+    18,
+    'USDT',
+    'Tether USD',
+    'https://tether.to/',
   ),
 } as const)
 

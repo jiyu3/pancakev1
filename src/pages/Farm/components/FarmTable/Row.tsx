@@ -8,7 +8,6 @@ import { FarmWithStakedValue } from '../../Farms'
 
 import Apr, { AprProps } from './Apr'
 import Farm, { FarmProps } from './Farm'
-import Earned, { EarnedProps } from './Earned'
 import Details from './Details'
 import Multiplier, { MultiplierProps } from './Multiplier'
 import Liquidity, { LiquidityProps } from './Liquidity'
@@ -19,7 +18,6 @@ import { DesktopColumnSchema, MobileColumnSchema } from '../types'
 export interface RowProps {
   apr: AprProps
   farm: FarmProps
-  earned: EarnedProps
   multiplier: MultiplierProps
   liquidity: LiquidityProps
   details: FarmWithStakedValue
@@ -32,7 +30,6 @@ interface RowPropsWithLoading extends RowProps {
 const cells = {
   apr: Apr,
   farm: Farm,
-  earned: Earned,
   details: Details,
   multiplier: Multiplier,
   liquidity: Liquidity,
@@ -53,10 +50,6 @@ const CellInner = styled.div`
 const StyledTr = styled.tr`
   cursor: pointer;
   border-bottom: 2px solid #ccc;
-`
-
-const EarnedMobileCell = styled.td`
-  padding: 16px 0 24px 16px;
 `
 
 const AprMobileCell = styled.td`
@@ -147,11 +140,6 @@ const Row: React.FunctionComponent<RowPropsWithLoading> = (props) => {
             </FarmMobileCell>
           </tr>
           <tr>
-            <EarnedMobileCell>
-              <CellLayout label='Earned'>
-                <Earned {...props.earned} userDataReady={userDataReady} />
-              </CellLayout>
-            </EarnedMobileCell>
             <AprMobileCell>
               <CellLayout label='APR'>
                 <Apr {...props.apr} hideButton />
