@@ -290,7 +290,7 @@ const Farms: React.FC = () => {
         <BoardDescription scale="md" color="text">
           No need to stake, just hold LP tokens,
         <br />
-          then you will earn ARSW tokens on 2022 Q1 depending on your amount of liquidity.
+          then you will earn ARSW tokens on 2022 Q1 depending on your amount and duration of liquidity.
         </BoardDescription>
         <Button variant='tertiary'>View Detailes</Button>
       </PageBoard>

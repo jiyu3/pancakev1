@@ -21,6 +21,21 @@ const Wrapper = styled.div`
   width: 100vw;
 `;
 
+const ArthSwapLogo = styled(Logo)`
+  min-width: 126px;
+
+  ${({ theme }) => theme.mediaQueries.lg} {
+    min-width: 175px;
+  }
+`
+
+const MainView = styled.div``
+
+const Footer = styled.div`
+  position: relative;
+  height: 40px;
+`
+
 const StyledNav = styled.nav`
   position: fixed;
   top: 0;
@@ -29,8 +44,7 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 8px;
-  padding-right: 16px;
+  padding: 16px;
   width: 100%;
   height: ${MENU_HEIGHT}px;
   background-color: #F5F8FB;
@@ -51,25 +65,18 @@ const Inner = styled.div`
   margin-top: 48px;
 `;
 
-const LogoWrapper = styled.div`
-  width: 176px;
-  height: 40px;
-  background-color: #DBEAFE;
-  color: #1B6DC1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  font-weight: 700;
-`;
-
 const NavList = styled.div`
-  padding: 16px;
+  padding-left: 36px;
   flex-grow: 1;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  column-gap: 32px;
+  column-gap: 24px;
+
+  ${({ theme }) => theme.mediaQueries.lg} {
+    padding-left: 72px;
+    column-gap: 50px;
+  }
 `;
 
 // @TODO improvement props disabled
@@ -98,7 +105,7 @@ const UikitMenu: React.FC<NavProps> = ({
     <Wrapper>
       <StyledNav >
         <Link to="/">
-          <Logo srcs={["/images/arthswaplogo.svg"]} alt='arth swap logo' />
+          <ArthSwapLogo srcs={["/images/arthswaplogo.svg"]} alt='arth swap logo' />
         </Link>
         <NavList>
           <NavItem isActive={location.pathname === '/swap'} to="/swap">Swap</NavItem>
