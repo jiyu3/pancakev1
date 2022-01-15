@@ -1,6 +1,7 @@
 import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom'
 import { ResetCSS } from '@pancakeswap-libs/uikit'
+import { ETHER } from '@pancakeswap/sdk'
 import GlobalStyle from './style/Global'
 import App from './pages/App'
 import ApplicationUpdater from './state/application/updater'
@@ -11,6 +12,8 @@ import ToastListener from './components/ToastListener'
 import Providers from './Providers'
 import 'inter-ui'
 import './i18n'
+
+Object.assign(ETHER, { symbol: "SDN", name: "SDN" })
 
 if ('ethereum' in window) {
   (window.ethereum as any).autoRefreshOnNetworkChange = false
