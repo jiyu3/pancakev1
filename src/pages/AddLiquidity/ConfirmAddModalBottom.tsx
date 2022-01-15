@@ -1,7 +1,6 @@
 import { Currency, CurrencyAmount, Fraction, Percent } from '@pancakeswap/sdk'
 import React from 'react'
 import { Text } from '@pancakeswap-libs/uikit'
-// import { TranslateString } from 'utils/translateTextHelpers'
 import { RowBetween, RowFixed } from '../../components/Row'
 import CurrencyLogo from '../../components/CurrencyLogo'
 import { Field } from '../../state/mint/actions'
@@ -59,7 +58,6 @@ export function ConfirmAddModalBottom({
       </RowBetween>
       <Button mt="20px" onClick={onAdd}>
         {noLiquidity ? 'Create Pool & Supply': 'Confirm Supply'}
-        {/* {noLiquidity ? TranslateString(250, 'Create Pool & Supply') : TranslateString(252, 'Confirm Supply')} */}
       </Button>
     </>
   )
