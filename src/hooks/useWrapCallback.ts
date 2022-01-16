@@ -32,12 +32,15 @@ export default function useWrapCallback(
   const inputAmount = useMemo(() => tryParseAmount(typedValue, inputCurrency), [inputCurrency, typedValue])
   const addTransaction = useTransactionAdder()
 
+  console.info(`useWrapCallback: inputCurrency: ${JSON.stringify(inputCurrency)}, outputCurrency: ${JSON.stringify(outputCurrency)}, typedValue: ${JSON.stringify(typedValue)}`)
+
   return useMemo(() => {
     if (!wethContract || !chainId || !inputCurrency || !outputCurrency) return NOT_APPLICABLE
-
+    console.info(`useWrapCallback: wethContract: ${wethContract.address}`)
     const sufficientBalance = inputAmount && balance && !balance.lessThan(inputAmount)
 
-    if (inputCurrency === ETHER && currencyEquals(WETH[chainId], outputCurrency)) {
+    if (inputCurrency === ETHER && currencyEquals(WETH[336], outputCurrency)) {
+      console.info(`useWrapCallback: ${JSON.stringify(ETHER)}`)
       return {
         wrapType: WrapType.WRAP,
         execute:
@@ -45,7 +48,7 @@ export default function useWrapCallback(
             ? async () => {
                 try {
                   const txReceipt = await wethContract.deposit({ value: `0x${inputAmount.raw.toString(16)}` })
-                  addTransaction(txReceipt, { summary: `Wrap ${inputAmount.toSignificant(6)} BNB to WBNB` })
+                  addTransaction(txReceipt, { summary: `Wrap ${inputAmount.toSignificant(6)} SDN to WSDN` })
                 } catch (error) {
                   console.error('Could not deposit', error)
                 }
@@ -61,13 +64,13 @@ export default function useWrapCallback(
             ? async () => {
                 try {
                   const txReceipt = await wethContract.withdraw(`0x${inputAmount.raw.toString(16)}`)
-                  addTransaction(txReceipt, { summary: `Unwrap ${inputAmount.toSignificant(6)} WBNB to BNB` })
+                  addTransaction(txReceipt, { summary: `Unwrap ${inputAmount.toSignificant(6)} WSDN to SDN` })
                 } catch (error) {
                   console.error('Could not withdraw', error)
                 }
               }
             : undefined,
-        inputError: sufficientBalance ? undefined : 'Insufficient WBNB balance'
+        inputError: sufficientBalance ? undefined : 'Insufficient WSDN balance'
       }
     } 
       return NOT_APPLICABLE

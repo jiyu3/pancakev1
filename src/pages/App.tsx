@@ -3,6 +3,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 import { Credentials, StringTranslations } from '@crowdin/crowdin-api-client'
 import { LangType } from '@pancakeswap-libs/uikit'
+import { ETHER } from '@pancakeswap/sdk'
 import Popups from '../components/Popups'
 import Web3ReactManager from '../components/Web3ReactManager'
 import { RedirectDuplicateTokenIds, RedirectOldAddLiquidityPathStructure } from './AddLiquidity/redirects'
@@ -19,6 +20,9 @@ import { LanguageContext } from '../hooks/LanguageContext'
 import { TranslationsContext } from '../hooks/TranslationsContext'
 import Header from '../components/Header'
 import useGetDocumentTitlePrice from '../hooks/useGetDocumentTitlePrice'
+
+
+Object.assign(ETHER, {symbol: "SDN", decimals: 18, name: "Shiden"})
 
 const AppWrapper = styled.div`
   display: flex;

@@ -9,7 +9,6 @@ import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useCombinedInactiveList } from 'state/lists/hooks'
 import { ListLogo } from 'components/Logo'
 import { useTranslation } from 'contexts/Localization'
-import { Address } from 'constants/types'
 
 interface ImportProps {
   tokens: Token[]
@@ -68,7 +67,7 @@ function ImportToken({ tokens, handleCurrencySelect }: ImportProps) {
               <Flex justifyContent="space-between" width="100%">
                 <Text mr="4px">{address}</Text>
                 <Link href={getBscScanLink(chainId, token.address, 'address')} external>
-                  ({t('View on BscScan')})
+                  ({t('View on subscan')})
                 </Link>
               </Flex>
             )}
