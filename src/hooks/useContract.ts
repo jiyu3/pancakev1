@@ -33,7 +33,7 @@ export function useTokenContract(tokenAddress?: string, withSignerIfPossible?: b
 
 export function useWETHContract(withSignerIfPossible?: boolean): Contract | null {
   const { chainId } = useActiveWeb3React()
-  return useContract("0xaeaaf0e2c81af264101b9129c00f4440ccf0f720", WETH_ABI, withSignerIfPossible)
+  return useContract("0x0f933Dc137D21cA519ae4C7E93f87a4C8EF365Ef", WETH_ABI, withSignerIfPossible)
 }
 
 export function useENSRegistrarContract(withSignerIfPossible?: boolean): Contract | null {

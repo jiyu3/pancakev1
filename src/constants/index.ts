@@ -11,6 +11,7 @@ type ChainTokenList = {
 
 export const CAKE = new Token(ChainId.MAINNET as any, '0x39Cf42f297885565BFc1a1f99DeDcb5e8D79c6C0', 18, 'CAKE', 'PancakeSwap Token')
 export const WBNB = new Token(ChainId.MAINNET as any, '0xaeaaf0e2c81af264101b9129c00f4440ccf0f720', 18, 'WBNB', 'Wrapped BNB')
+export const WSDN = new Token(ChainId.MAINNET as any, '0x0f933Dc137D21cA519ae4C7E93f87a4C8EF365Ef', 18, 'WSDN', 'Wrapped SDN')
 export const DAI = new Token(ChainId.MAINNET as any, '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3', 18, 'DAI', 'Dai Stablecoin')
 export const BUSD = new Token(ChainId.TESTNET as any, '0x938BCe03532A3845Ec0aB75069E3d84f9cd2826f', 18, 'TNM', 'Tanuma Token')
 export const BTCB = new Token(ChainId.TESTNET as any, '0x116dc328f6962C5defE32D17Ef8B118d56B77E88', 18, 'RCH', 'Raichi Token')

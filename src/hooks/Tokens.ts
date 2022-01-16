@@ -84,7 +84,6 @@ export function useAllInactiveTokens(): { [address: string]: Token } {
 
 export function useUnsupportedTokens(): { [address: string]: Token } {
   const unsupportedTokensMap = useUnsupportedTokenList()
-  console.info('unsupportedTokensMap', useTokensFromMap(unsupportedTokensMap, false))
   return useTokensFromMap(unsupportedTokensMap, false)
 }
 
@@ -189,7 +188,7 @@ export function useToken(tokenAddress?: string): Token | undefined | null {
 }
 
 export function useCurrency(currencyId: string | undefined): Currency | null | undefined {
-  const isBNB = currencyId?.toUpperCase() === 'BNB'
+  const isBNB = currencyId?.toUpperCase() === 'SDN'
   const token = useToken(isBNB ? undefined : currencyId)
   return isBNB ? ETHER : token
 }
